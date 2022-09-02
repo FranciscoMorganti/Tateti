@@ -25,11 +25,11 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 header{
-    height: 25vh;
+    height: 20vh;
     background-color: red;
 }
 
