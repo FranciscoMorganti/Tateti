@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .tateti__contenedor{
+    width: 100vw;
+    height: 100vh;
+}
+
+.tateti__tablero{
+    width: 40%;
+    height: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.tateti__casilla{
+    border: 2px solid #000;
+} */
+
+.contenedor-app{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    height: 25vh;
+    background-color: red;
+}
+
+main{
+    height: 50vh;
+    background-color: yellow;
+}
+
+footer{
+    height: 25vh;
+    background-color: green;
+}
+
+@media screen and (orientation: landscape) {
+    .contenedor-app{
+        flex-direction: row;
+    }
+    header{
+        width: 25vw;
+        height: 100vh;
+    }
+    main{
+        width: 50vw;
+        height: 100vh;
+    }
+    footer{
+        width: 25vw;
+        height: 100vh;
+    }
+}
