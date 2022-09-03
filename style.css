@@ -78,6 +78,7 @@ h1{
     font-size: 8vh;
     display: flex;
     justify-content: space-evenly;
+    color: rebeccapurple;
 }
 
 /* Footer */
