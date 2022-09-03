@@ -22,6 +22,9 @@ header{
 main{
     flex: 2;
     background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer{
@@ -35,20 +38,22 @@ footer{
     }
 }
 
-
-/* .tateti__contenedor{
-    width: 100vw;
-    height: 100vh;
+.tateti{
+    width: 60%;
+    height: 0;
+    padding-bottom: 60%;
+    position: relative;
 }
 
 .tateti__tablero{
-    width: 40%;
-    height: 40%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .tateti__casilla{
     border: 2px solid #000;
-} */
+}
