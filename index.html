@@ -11,28 +11,59 @@
 </head>
 <body>
     <div class="contenedor-app">
-        <header></header>
+        <header>
+            <div class="cambio-de-tema">
+                <ion-icon name="moon-outline"></ion-icon>
+            </div>
+            <div class="perfil-jugadores">
+                <div class="perfil-jugador">
+                    <p></p>
+                    <h2>Jugador 1</h2>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+                <div class="perfil-jugador">
+                    <p></p> 
+                    <h2>Jugador 2</h2>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+            </div>
+        </header>
         <main>
             <h1 class="indicador-turno">Turno de Juan</h1>
+            <div class="fichas-jugador-1">
+                <p>X</p>
+                <p>X</p>
+                <p>X</p>
+            </div>
             <div class="tateti">
                 <div class="tateti__tablero">
-                    <div class="tateti__casilla"></div>
-                    <div class="tateti__casilla"></div>
-                    <div class="tateti__casilla"></div>
-                    <div class="tateti__casilla"></div>
-                    <div class="tateti__casilla"></div>
-                    <div class="tateti__casilla"></div>
-                    <div class="tateti__casilla"></div>
-                    <div class="tateti__casilla"></div>
-                    <div class="tateti__casilla"></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
+                    <div class="tateti__casilla"><div class="tateti__casilla-marcador"></div></div>
                 </div>
+            </div>
+            <div class="fichas-jugador-2">
+                <p>O</p>
+                <p>O</p>
+                <p>O</p>
             </div>
             <div class="herramientas">
                 <ion-icon name="play-circle-outline" class="tateti__iniciar-partida"></ion-icon>
                 <ion-icon name="refresh-circle-outline" class="tateti__reiniciar-partida"></ion-icon>
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="contador-movimientos">
+                <p>Movimientos:</p>
+                <p>0</p>
+            </div>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
