@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -14,28 +16,33 @@ html, body{
     flex-direction: column;
 }
 
+/* Header */
+
 header{
     flex: 2;
     background-color: red;
 }
 
+/* Main */
+
 main{
     flex: 7;
     background-color: yellow;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
-footer{
-    flex: 2;
-    background-color: green;
+h1{
+    font-size: 6vh;
+    font-family: 'Quicksand';
 }
 
 .tateti{
-    width: 70%;
+    width: 65%;
     height: 0;
-    padding-bottom: 70%;
+    padding-bottom: 65%;
     position: relative;
 }
 
@@ -48,16 +55,46 @@ footer{
     grid-template-rows: repeat(3, 1fr);
 }
 
-.tateti__casilla{
-    border: 2px solid #000;
+.tateti__casilla:nth-child(2)::before, .tateti__casilla:nth-child(3)::before{
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    height: 100%;
+    width: 2%;
+    background-color: #000;
 }
+
+.tateti__casilla:nth-child(4)::before, .tateti__casilla:nth-child(7)::before{
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    height: 2%;
+    width: 100%;
+    background-color: #000;
+}
+
+.herramientas{
+    width: 50%;
+    font-size: 8vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Footer */
+
+footer{
+    flex: 2;
+    background-color: green;
+}
+
+/* Media Queries */
 
 @media screen and (orientation: landscape) {
     .contenedor-app{
         flex-direction: row;
     }
     .tateti{
-        width: 45%;
-        padding-bottom: 45%;
+        width: 40%;
+        padding-bottom: 40%;
     }
 }

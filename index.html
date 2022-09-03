@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div class="contenedor-app">
         <header></header>
         <main>
+            <h1 class="indicador-turno">Turno de Juan</h1>
             <div class="tateti">
                 <div class="tateti__tablero">
                     <div class="tateti__casilla"></div>
@@ -23,6 +26,10 @@
                     <div class="tateti__casilla"></div>
                     <div class="tateti__casilla"></div>
                 </div>
+            </div>
+            <div class="herramientas">
+                <ion-icon name="play-circle-outline" class="tateti__iniciar-partida"></ion-icon>
+                <ion-icon name="refresh-circle-outline" class="tateti__reiniciar-partida"></ion-icon>
             </div>
         </main>
         <footer></footer>
