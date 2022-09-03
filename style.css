@@ -15,12 +15,12 @@ html, body{
 }
 
 header{
-    flex: 1;
+    flex: 2;
     background-color: red;
 }
 
 main{
-    flex: 2;
+    flex: 7;
     background-color: yellow;
     display: flex;
     justify-content: center;
@@ -28,20 +28,14 @@ main{
 }
 
 footer{
-    flex: 1;
+    flex: 2;
     background-color: green;
 }
 
-@media screen and (orientation: landscape) {
-    .contenedor-app{
-        flex-direction: row;
-    }
-}
-
 .tateti{
-    width: 60%;
+    width: 70%;
     height: 0;
-    padding-bottom: 60%;
+    padding-bottom: 70%;
     position: relative;
 }
 
@@ -56,4 +50,14 @@ footer{
 
 .tateti__casilla{
     border: 2px solid #000;
+}
+
+@media screen and (orientation: landscape) {
+    .contenedor-app{
+        flex-direction: row;
+    }
+    .tateti{
+        width: 55%;
+        padding-bottom: 55%;
+    }
 }
