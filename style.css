@@ -93,7 +93,7 @@ h1{
 .tateti__casilla-marcador{
     font-family: 'Quicksand';
     height: 100%;
-    font-size: 5vh;
+    font-size: 6vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,11 +113,11 @@ h1{
 }
 
 .fichas-jugador-1{
-    left: 5%;
+    left: 8%;
 }
 
 .fichas-jugador-2{
-    right: 5%;
+    right: 8%;
 }
 
 /* Footer */
