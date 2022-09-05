@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
+:root{
+    --color-principal: #000;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html{
     height: 100%;
 }
 
@@ -15,6 +19,10 @@ html, body{
     display: flex;
     flex-direction: column;
     background-color: #CCC;
+}
+
+.contenedor-app--modo-oscuro{
+    background-color: #222;
 }
 
 /* Header */
@@ -32,12 +40,14 @@ header{
     position: fixed;
     top: 2vh;
     left: 2vh;
+    color: var(--color-principal);
 }
 
 .perfil-jugador{
     display: flex;
     align-items: center;
     font-family: 'Quicksand';
+    color: var(--color-principal);
 }
 
 /* Main */
@@ -54,6 +64,7 @@ main{
 h1{
     font-size: 6vh;
     font-family: 'Quicksand';
+    color: var(--color-principal);
 }
 
 .tateti{
@@ -78,7 +89,7 @@ h1{
     border-radius: 10px;
     height: 100%;
     width: 2%;
-    background-color: #000;
+    background-color: var(--color-principal);
 }
 
 .tateti__casilla:nth-child(4)::before, .tateti__casilla:nth-child(7)::before{
@@ -87,7 +98,7 @@ h1{
     border-radius: 10px;
     height: 2%;
     width: 100%;
-    background-color: #000;
+    background-color: var(--color-principal);
 }
 
 .tateti__casilla-marcador{
@@ -104,12 +115,14 @@ h1{
     font-size: 8vh;
     display: flex;
     justify-content: space-evenly;
+    color: var(--color-principal);
 }
 
 .fichas-jugador-1, .fichas-jugador-2{
     position: absolute;
     font-size: 5vh;
     font-family: 'Quicksand';
+    color: var(--color-principal);
 }
 
 .fichas-jugador-1{
@@ -118,6 +131,79 @@ h1{
 
 .fichas-jugador-2{
     right: 8%;
+}
+
+.contenedor-modal-ganador{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.modal-ganador{
+    width: 80%;
+    height: 70%;
+    border-radius: 20px;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    transition: .5s;
+    margin-top: 150vh;
+    max-width: 375px;
+}
+
+.modal-ganador--modo-oscuro{
+    background-color: #222;
+}
+
+.modal-ganador__icono{
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15vh;
+}
+
+.modal-ganador__icono ion-icon:nth-child(2){
+    position: absolute;
+    font-size: 7vh;
+    margin-top: -4vh;
+}
+
+.modal-ganador__texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand';
+}
+
+.modal-ganador__texto h3{
+    text-align: center;
+    margin: 4vh 0;
+}
+
+.modal-ganador__texto h4{
+    text-align: center;
+    margin: 2vh 0;
+}
+
+.modal-ganador__texto h5{
+    text-align: center;
+    font-size: 3vh;
+    margin: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-principal);
 }
 
 /* Footer */
@@ -140,9 +226,14 @@ footer{
     align-items: center;
     background-color: #aaa;
     border-radius: 10px;
-    box-shadow: -3px 5px 10px #000;
+    box-shadow: -3px 5px 10px var(--color-principal);
     font-family: 'Quicksand';
     font-size: 3vh;
+    color: var(--color-principal);
+}
+
+.contador-movimientos--modo-oscuro{
+    background-color: #444;
 }
 
 /* Media Queries */
