@@ -1,16 +1,19 @@
 const tatetiTablero= document.querySelector('.tateti__tablero');
 const contador= document.querySelector('.contador-movimientos__numero');
 const header= document.querySelector('header');
+const configuracionJugadores= document.querySelector('.contenedor-configuracion-jugadores');
+const configuracionColor= document.querySelector('#configuracion-color');
 const contenedorApp= document.querySelector('.contenedor-app');
 const rootStyles= document.documentElement.style;
 const contenedorModalGanador= document.querySelector('.contenedor-modal-ganador');
 
+let configurandoJugador1;
 let fichaJugador1= 'X';
 let fichaJugador2= 'O';
 let nombreJugador1= 'Pepe';
 let nombreJugador2= 'Juan';
-let colorJugador1= 'red';
-let colorJugador2= 'blue';
+let colorJugador1;
+let colorJugador2;
 let tablero= [];
 let esTurnoJugador1= true;
 let partidaIniciada= true;
@@ -32,11 +35,38 @@ header.addEventListener('click', e => {
     if(e.target.name === 'moon-outline' || e.target.name === 'sunny-outline'){
         e.target.name === 'sunny-outline'? e.target.parentElement.innerHTML= '<ion-icon name="moon-outline"></ion-icon>' : e.target.parentElement.innerHTML= '<ion-icon name="sunny-outline"></ion-icon>';
         e.target.name === 'sunny-outline'? rootStyles.setProperty('--color-principal', '#000') : rootStyles.setProperty('--color-principal', '#fff');
-        contenedorApp.classList.toggle('contenedor-app--modo-oscuro');
+        e.target.name === 'sunny-outline'? rootStyles.setProperty('--color-secundario', '#CCC') : rootStyles.setProperty('--color-secundario', '#222') 
         contenedorApp.children[2].children[0].classList.toggle('contador-movimientos--modo-oscuro');
-        contenedorApp.children[1].children[5].children[0].classList.toggle('modal-ganador--modo-oscuro')
+    }else if(e.target.parentElement === header.children[1].children[0] || e.target.parentElement === header.children[1].children[1]){
+        configuracionJugadores.style.visibility= 'visible';
+        e.target.parentElement === header.children[1].children[0]? configurandoJugador1= true : configurandoJugador1= false;
+        if (configurandoJugador1){
+            colorJugador1? rootStyles.setProperty('--color-configuracion', colorJugador1) : rootStyles.setProperty('--color-configuracion', 'var(--color-principal)');
+            elegirColor();
+        }else{
+            colorJugador2? rootStyles.setProperty('--color-configuracion', colorJugador2) : rootStyles.setProperty('--color-configuracion', 'var(--color-principal)');
+            elegirColor();
+        }  
+    }else if(e.target.name === 'close-circle-outline' || e.target.className === 'configuracion-jugadores__ok'){
+        configuracionJugadores.style.visibility= 'hidden';
     }
 });
+
+function elegirColor(){
+    configuracionColor.addEventListener('input', e =>{
+        if(configurandoJugador1){
+            colorJugador1= configuracionColor.value;
+            rootStyles.setProperty('--color-configuracion', colorJugador1)
+            header.children[1].children[0].children[1].style.color= colorJugador1;
+            contenedorApp.children[1].children[1].style.color= colorJugador1;
+        }else if(!configurandoJugador1){
+            colorJugador2= configuracionColor.value;
+            rootStyles.setProperty('--color-configuracion', colorJugador2)
+            header.children[1].children[1].children[1].style.color= colorJugador2;
+            contenedorApp.children[1].children[3].style.color= colorJugador2;
+        }
+    });
+}
 
 tatetiTablero.addEventListener('click', e => {
     if(e.target.className == 'tateti__casilla-marcador'){
